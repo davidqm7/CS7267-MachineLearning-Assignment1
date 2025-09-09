@@ -134,8 +134,44 @@ for run in range(num_runs):
     print(f"Worst SSE: {worst_result['sse']:.4f}")
 
 #A. What to do: 2.Part b
+def plot_iris_clusters(data, assignments, centroids, title):
 
-print("fdsfsd") # Placeholder to indicate end of the code provided for part b.
+    K = len(centroids) 
+    colors = ['red', 'blue', 'green', 'purple', 'orange'] 
+
+    plt.figure(figsize=(8, 6))
+
+    for k in range(K):
+        cluster_points = data[assignments == k]
+     
+        plt.scatter(cluster_points[:, 2], 
+                    cluster_points[:, 3], 
+                    c=colors[k], 
+                    label=f'Cluster {k+1}')
+
+    
+    plt.scatter(centroids[:, 2], 
+                centroids[:, 3], 
+                c='black', marker='X', s=200, label='Centroids')
+
+    plt.title(title)
+    plt.xlabel('Attribute 3 (Petal Length)')
+    plt.ylabel('Attribute 4 (Petal Width)')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+
+plot_iris_clusters(iris_data, 
+                   best_result['assignments'], 
+                   best_result['centroids'], 
+                   'Best Clustering Result (Lowest SSE)')
+
+
+plot_iris_clusters(iris_data, 
+                   worst_result['assignments'], 
+                   worst_result['centroids'], 
+                   'Worst Clustering Result (Highest SSE)')
 
 
 
