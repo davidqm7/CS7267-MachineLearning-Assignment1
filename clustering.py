@@ -173,5 +173,59 @@ plot_iris_clusters(iris_data,
                    worst_result['centroids'], 
                    'Worst Clustering Result (Highest SSE)')
 
+#A. What to do: 2.Part c
+true_labels = iris_df[4].astype('category').cat.codes.values
+
+species_names = iris_df[4].unique()
+colors = ['red', 'blue', 'green']
+
+plt.figure(figsize=(8, 6))
+
+for species_index in range(len(species_names)):
+    species_points = iris_data[true_labels == species_index]
+    plt.scatter(species_points[:, 2], 
+                species_points[:, 3], 
+                c=colors[species_index], 
+                label=species_names[species_index])
+
+plt.title('Original Iris Species (Ground Truth)')
+plt.xlabel('Attribute 3 (Petal Length)')
+plt.ylabel('Attribute 4 (Petal Width)')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+
+#A. What to do: 2.Part d
+K = 3
+original_centers = []
+
+for k in range(K):
+    points_in_species = iris_data[true_labels == k]
+    true_center = np.mean(points_in_species, axis=0)
+    original_centers.append(true_center)
+
+original_centers = np.array(original_centers)
+print("Original Species Centers (Ground Truth):")
+print(original_centers)
+
+best_kmeans_centroids = best_result['centroids']
+
+print("\nBest K-Means Centroids:")
+print(best_kmeans_centroids)
+
+print("\n--- Distances between Matched Centers ---")
+
+total_distance = 0
+
+for kmeans_centroid in best_kmeans_centroids:
+    distances = [np.linalg.norm(kmeans_centroid - true_center) for true_center in original_centers]
+
+    min_distance = np.min(distances)
+
+    print(f"Distance to nearest true center: {min_distance:.4f}")
+    total_distance += min_distance
+
+print(f"\nAverage distance between K-Means centroids and their closest true centers: {total_distance / K:.4f}")
 
 
