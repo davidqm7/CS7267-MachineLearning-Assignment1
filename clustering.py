@@ -53,7 +53,7 @@ def plot_iris_clusters(data, assignments, centroids, title):
 
 def main():
 
-    kmtest_df = pd.read_csv('kmtest.csv', sep='\s+', header=None)
+    kmtest_df = pd.read_csv('kmtest.csv', sep=r'\s+', header=None)
     iris_df = pd.read_csv('iris.csv', header=None)
     kmtest_data = kmtest_df.values.astype(float)
     iris_data = iris_df.iloc[:, :4].values
@@ -113,7 +113,7 @@ def main():
     plot_iris_clusters(iris_data, best_result['assignments'], best_result['centroids'], 'Best Clustering Result (Lowest SSE)')
     plot_iris_clusters(iris_data, worst_result['assignments'], worst_result['centroids'], 'Worst Clustering Result (Highest SSE)')
 
-    # Part 2.c: Plot original data
+    # Part 2.c: Plot original data 
     print("\n--- Part 2.c: Plotting Original Iris Species Data ---")
     true_labels = iris_df[4].astype('category').cat.codes.values
     species_names = iris_df[4].unique()
