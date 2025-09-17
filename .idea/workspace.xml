@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5c136adb-8dae-4e0a-a4b1-9016025b6fec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/clustering.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +73,7 @@
       <workItem from="1756568808476" duration="4468000" />
       <workItem from="1756657433986" duration="1428000" />
       <workItem from="1757353028687" duration="3565000" />
+      <workItem from="1758030894530" duration="3329000" />
     </task>
     <servers />
   </component>
@@ -92,6 +92,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/clustering_py$clustering.coverage" NAME="clustering Coverage Results" MODIFIED="1757356355385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/clustering_py$clustering.coverage" NAME="clustering Coverage Results" MODIFIED="1758035449884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

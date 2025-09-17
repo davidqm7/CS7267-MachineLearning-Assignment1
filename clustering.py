@@ -1,3 +1,7 @@
+# Name: David Quintanilla
+# Number: 000960982
+# Project 1
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
